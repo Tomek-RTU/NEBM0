@@ -1,2 +1,2 @@
-# NEBM0
+# RTR-105
 Datormācība (pamatkurss) elektroniskā klade
