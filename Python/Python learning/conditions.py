@@ -1,7 +1,8 @@
 age = int(input("Cik Tev gadi? "))
 
 # if age >= 16 and age <= 65:
-if 16 <= age <= 65:
+# if 16 <= age <= 65:
+if age in range(16, 66):
     print("Lai Tev jauka diena")
 else:
     print("Izbaudi savu laiku")

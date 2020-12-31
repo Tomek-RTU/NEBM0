@@ -13,7 +13,7 @@ else:
     print("False")
 
 name = input("Lūdzu ievadi savu vārdu: ")
-#if name:
+# if name:
 if name != "":
     print("Sveiks, {}".format(name))
 else:
