@@ -1,38 +1,30 @@
-print("Please choose your option from the list below: ")
-print("1:\tSniper")
-print("2:\tEOD")
-print("3:\tJTAC")
-print("4:\tPJ")
-print("5:\tDiver")
-print("0:\tExit")
+data = [
+    "Andromeda - Shrub",
+    "Bellflower - Flower",
+    "China Pink - Flower",
+    "Daffodil - Flower",
+    "Evening Primrose - Flower",
+    "French Marigold - Flower",
+    "Hydrangea - Shrub",
+    "Iris - Flower",
+    "Japanese Camellia - Shrub",
+    "Lavender - Shrub",
+    "Lilac- Shrub",
+    "Magnolia - Shrub",
+    "Peony - Shrub",
+    "Queen Anne's Lace - Flower",
+    "Red Hot Poker - Flower",
+    "Snapdragon - Flower",
+    "Sunflower - Flower",
+    "Tiger Lily - Flower",
+    "Witch Hazel - Shrub",
+]
 
-while True:
-    choice = input()
+flowers = []
+shrubs = []
 
-    if choice == "0":
-        print("You chose to Exit!")
-        break
-    elif choice in "12345":
-        print("You chose {}".format(choice))
-    else:
-        print("Please choose your option from the list below: ")
-        print("1:\tSniper")
-        print("2:\tEOD")
-        print("3:\tJTAC")
-        print("4:\tPJ")
-        print("5:\tDiver")
-        print("0:\tExit")
-
-# choice = "-"
-# while choice != "0":
-#     if choice in "12345":
-#         print("You chose {}".format(choice))
-#     else:
-#         print("Please choose your option from the list below: ")
-#         print("1:\tSniper")
-#         print("2:\tEOD")
-#         print("3:\tJTAC")
-#         print("4:\tPJ")
-#         print("5:\tDiver")
-#         print("0:\tExit")
-#     choice = input()
+for plant in data:
+    if "Flower" in plant:
+        flowers.append(plant)
+    elif "Shrub" in plant:
+        shrubs.append(plant)
