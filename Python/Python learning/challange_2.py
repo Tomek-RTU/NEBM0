@@ -1,5 +1,5 @@
 # Take input from the user
-user_input = input("Please enter three numbers seperated by ',': ")
+user_input = input("Please enter three numbers separated by ',': ")
 
 # Split the given input string into 3 parts
 string_tokens = user_input.split(",")
