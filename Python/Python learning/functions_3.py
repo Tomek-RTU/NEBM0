@@ -1,4 +1,24 @@
-def is_palindrome(string):
+def fibonacci(n: int) -> int:
+    """Return the 'n'th Fibonacci number, for positive 'n'."""
+    if 0 <= n <= 1:
+        return n
+
+    n_minus1, n_minus2 = 1, 0
+
+    result = None
+    for f in range(n - 1):
+        result = n_minus2 + n_minus1
+        n_minus2 = n_minus1
+        n_minus1 = result
+
+    return result
+
+
+for i in range(36):
+    print(i, fibonacci(i))
+
+
+def is_palindrome(string: str) -> bool:
     """
 Check if a string is a palindrome.
 
@@ -12,7 +32,7 @@ A palindrome is a string that reads the same forwards as backwards.
     return string[::-1].casefold() == string.casefold()
 
 
-def palindrome_sentence(sentence):
+def palindrome_sentence(sentence: str) -> bool:
     """
 Check if a sentence is a palindrome.
 
@@ -26,12 +46,7 @@ punctuation in the sentence.
     for char in sentence:
         if char.isalnum():
             string += char
-    print(string)
-    # return string[::-1].casefold() == string.casefold()
     return is_palindrome(string)
 
-word = input("Please enter a word to check: ")
-if palindrome_sentence(word):
-    print("'{}' is a palindrome". format(word))
-else:
-    print("'{}' is NOT a palindrome".format(word))
+
+p = palindrome_sentence()

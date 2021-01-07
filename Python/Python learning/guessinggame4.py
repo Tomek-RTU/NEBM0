@@ -2,6 +2,16 @@ import random
 
 
 def get_integer(prompt):
+    """
+    Get an integer from Standard Input (stdin).
+
+    The function will continue looping, and promoting
+    the user, until a valid 'int' is entered.
+
+    :param prompt: The string what the user will see, when
+        they're promoted to enter the value.
+    :return: The integer the the user enters.
+    """
     while True:
         temp = input(prompt)
         if temp.isnumeric():
@@ -10,6 +20,11 @@ def get_integer(prompt):
         print("{0} is not a valid number". format(temp))
 
 
+# print(input.__doc__)
+# print("*" * 80)
+# print(get_integer.__doc__)
+# print("*" * 80)
+help(get_integer)
 highest = 1000
 answer = random.randint(1, highest)
 print(answer)   # TODO: Remove after testing
