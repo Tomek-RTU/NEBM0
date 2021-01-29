@@ -23,7 +23,7 @@ available_zones = {'1': "Africa/Tunis",
                    '7': "Pacific/Tahiti",
                    '8': "US/Hawaii",
                    '9': "Zulu"}
-print("Please choose a timezone (or 0 to quite): ")
+print("Please choose a timezone (or 0 to quit): ")
 for place in sorted(available_zones):
     print("\t{}. {}".format(place, available_zones[place]))
 
