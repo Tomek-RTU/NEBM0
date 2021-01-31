@@ -1,37 +1,55 @@
-def is_palindrome(string):
-    """
-Check if a string is a palindrome.
-
-A palindrome is a string that reads the same forwards as backwards.
-
-:param string: The string to check.
-:return: True if `string` is a palindrome, False otherwise.
-"""
-    # backwards = string[::-1]
-    # return backwards == string
-    return string[::-1].casefold() == string.casefold()
+import tkinter
+import math
 
 
-def palindrome_sentence(sentence):
-    """
-Check if a sentence is a palindrome.
+def parabola(page, size):
+    for x in range(size):
+        y = x * x / size
+        plot(page, x, y)
+        plot(page, -x, y)
 
-The function ignores whitespace, capitalisation and
-punctuation in the sentence.
 
-:param sentence: The sentence to check.
-:return: True if `sentence` is a palindrome, False otherwise.
-"""
-    string = ""
-    for char in sentence:
-        if char.isalnum():
-            string += char
-    print(string)
-    # return string[::-1].casefold() == string.casefold()
-    return is_palindrome(string)
+def circle(page, radius, g, h, colour="red"):
+    page.create_oval(g + radius, h + radius, g - radius, h - radius, outline=colour, width=2)
+    # for x in range(g * 100, (g + radius) * 100):
+    #     x /= 100
+    #     print(x)
+    #     y = h + (math.sqrt(radius ** 2 -((x-g) ** 2)))
+    #     plot(page, x, y)
+    #     plot(page, x, 2 * h - y)
+    #     plot(page, 2 * g - x, y)
+    #     plot(page, 2 * g - x, 2 * h - y)
 
-word = input("Please enter a word to check: ")
-if palindrome_sentence(word):
-    print("'{}' is a palindrome". format(word))
-else:
-    print("'{}' is NOT a palindrome".format(word))
+
+def draw_axes(page):
+    page.update()
+    x_origin = page.winfo_width() / 2
+    y_origin = page.winfo_height() / 2
+    page.configure(scrollregion=(-x_origin, -y_origin, x_origin, y_origin))
+    page.create_line(-x_origin, 0, x_origin, 0, fill="black")
+    page.create_line(0, y_origin, 0, -y_origin, fill="black")
+    print(locals())
+
+
+def plot(page, x, y):
+    page.create_line(x, -y, x + 1, -y + 1, fill="red")
+
+
+mainWindow = tkinter.Tk()
+
+mainWindow.title("Parabola")
+mainWindow.geometry("640x480")
+
+canvas = tkinter.Canvas(mainWindow, width=640, height=480)
+canvas.grid(row=0, column=0)
+
+draw_axes(canvas)
+
+parabola(canvas, 100)
+parabola(canvas, 200)
+circle(canvas, 100, 100, 100, "green")
+circle(canvas, 100, 100, -100)
+circle(canvas, 100, -100, 100, "orange")
+circle(canvas, 100, -100, -100)
+circle(canvas, 10, 30, 30)
+mainWindow.mainloop()
